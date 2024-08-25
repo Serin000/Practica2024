@@ -49,7 +49,7 @@ export default function AddEdit({categories, product}) {
 
                                 <TextInput
                                     id="name"
-                                    className="mt-1 block w-full"
+                                    className="mt-1"
                                     value={data.name}
                                     onChange={(e) => setData('name', e.target.value)}
                                     required
@@ -64,7 +64,7 @@ export default function AddEdit({categories, product}) {
 
                                 <TextInput
                                     id="description"
-                                    className="mt-1 block w-full"
+                                    className="mt-1"
                                     value={data.description}
                                     onChange={(e) => setData('description', e.target.value)}
                                     required
@@ -78,7 +78,7 @@ export default function AddEdit({categories, product}) {
 
                                 <SelectInput
                                     id="category"
-                                    className="mt-1 block w-full"
+                                    className="mt-1"
                                     value={data.category}
                                     onChange={(e) => setData('category', e.target.value)}
                                     required
@@ -94,7 +94,7 @@ export default function AddEdit({categories, product}) {
                                 <TextInput
                                     id="price"
                                     type="number"
-                                    className="mt-1 block w-full"
+                                    className="mt-1"
                                     value={data.price}
                                     onChange={(e) => setData('price', e.target.value)}
                                     required
@@ -108,7 +108,7 @@ export default function AddEdit({categories, product}) {
                                 <div className={'grid grid-cols-6'}>
                                     {currentImages.map((image) => (<div className={'p-2'} key={image.id}>
                                             <img alt={''} src={image.url} width={200} height={200}/>
-                                            <FontAwesomeIcon onClick={() => deleteProductImage(image.id)} icon={faTrash} className={'text-red-600 ml-2'}/>
+                                            <FontAwesomeIcon onClick={() => deleteProductImage(image.id)} icon={faTrash} className={'text-red-900 ml-2 cursor-pointer'}/>
                                         </div>))}
                                 </div>
                             </div>

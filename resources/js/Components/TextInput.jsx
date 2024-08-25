@@ -7,14 +7,14 @@ export default forwardRef(function TextInput({ type = 'text', className = '', is
         if (isFocused) {
             input.current.focus();
         }
-    }, []);
+    }, [isFocused]);
 
     return (
         <input
             {...props}
             type={type}
             className={
-                'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ' +
+                'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm ' +
                 className
             }
             ref={input}

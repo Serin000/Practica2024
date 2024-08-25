@@ -46,11 +46,11 @@ export default function List({products}) {
                                     <div className={'mb-2'}>{product.price}</div>
                                     <div className={'mb-2'}>
                                         <Link href={route('products.update', [product.id])}>
-                                            <FontAwesomeIcon icon={faPencil} className={'text-blue-600'}/>
+                                            <FontAwesomeIcon icon={faPencil} className={'text-blue-900'}/>
                                         </Link>
 
                                         <Link className={"ml-2"} onClick={() => handleDelete(product.id)}>
-                                            <FontAwesomeIcon icon={faTrash} className={'text-red-600'}/>
+                                            <FontAwesomeIcon icon={faTrash} className={'text-red-900'}/>
                                         </Link>
                                     </div>
                                 </Fragment>

@@ -44,10 +44,10 @@ export default function List({categories}) {
                                     <div className={'mb-2'}>{category.order}</div>
                                     <div className={'mb-2'}>
                                         <Link href={route('categories.update', [category.id])}>
-                                            <FontAwesomeIcon icon={faPencil} className={'text-blue-600'}/>
+                                            <FontAwesomeIcon icon={faPencil} className={'text-blue-900'}/>
                                         </Link>
 
-                                        <FontAwesomeIcon onClick={() => handleDelete(category.id)} icon={faTrash} className={'text-red-600 ml-2 cursor-pointer'}/>
+                                        <FontAwesomeIcon onClick={() => handleDelete(category.id)} icon={faTrash} className={'text-red-900 ml-2 cursor-pointer'}/>
                                     </div>
                                 </Fragment>
                             })}
