@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function list()
     {
         return Inertia::render('Categories/List', [
-            'categories' => Category::orderBy('order')->get(),
+            'categories' => Category::orderBy('order')->paginate(3)->withQueryString(),
         ]);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
@@ -10,10 +11,19 @@ use Inertia\Inertia;
 
 class ProductController extends Controller
 {
-    public function list()
+    public function list(Request $request)
     {
+        $query = Product::with('category');
+
+        if ($request->has('category') && $request->input('category') !== '') {
+            $query->where('category_id', $request->input('category'));
+        }
+
+        $products = $query->paginate(3)->withQueryString();
+
         return Inertia::render('Products/List', [
-            'products' => Product::with(['category'])->get()
+            'products' => $products,
+            'categories' => Category::all()
         ]);
     }
 
